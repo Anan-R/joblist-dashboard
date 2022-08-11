@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Joblist Automation</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/20.2.4/css/dx.common.css">
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/20.2.4/css/dx.light.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link href="css/selectize.bootstrap4.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.toast.min.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="collapsed">
+    <aside class="left-bar">
+        <section class="side-container">
+            <a id="logo" class="text-center" style="margin-top:23px" href="/">
+                <img src="img/logo.png" width="105"/>
+            </a>
+            <div class="side-collapse">
+                <button type="button" class="btn-icon-base btn-base" id="collapse-open">
+                    <span class="btn-icon-label">
+                        <svg class="svg-icon" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path><path fill="none" d="M0 0h24v24H0z"></path></svg>
+                    </span>
+                </button>
+                <button type="button" class="btn-icon-base btn-base" id="collapse-close">
+                    <span class="btn-icon-label">
+                        <svg class="svg-icon" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path><path fill="none" d="M0 0h24v24H0z"></path></svg>
+                    </span>
+                </button>
+            </div>
+            <div id="language" style="margin: 15px auto 12px;">
+                <button class="btn" type="button">
+                    <span class="btn-label">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">&nbsp;&nbsp;Bannerhero GmbH</font>
+                        </font>
+                        <i>&nbsp;&nbsp;<img src="img/dropdown.png" width="10"/></i>
+                    </span>
+                </button>
+            </div>
+            <ul>
+                <li class="active">
+                    <a class="btn-base menu-item menu-item-link" title="Aufgabenliste" href="/dashboard">
+                        <div class="menu-icon">
+                            <img src="img/product.png">
+                        </div>
+                        <div class="menu-item-text"><span class="menu-text-body">Aufgabenliste</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-base menu-item menu-item-link" title="Jobliste" href="/timesheets">
+                        <div class="menu-icon">
+                            <img src="img/joblist.png">
+                        </div>
+                        <div class="menu-item-text">
+                            <span class="menu-text-body">Jobliste</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-base menu-item menu-item-link" title="Benutzer" href="/users">
+                        <div class="menu-icon">
+                            <img src="img/users.png">
+                        </div>
+                        <div class="menu-item-text"><span class="menu-text-body">Benutzer</span></div>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-base menu-item menu-item-link" title="Email" href="/email">
+                        <div class="menu-icon">
+                            <img src="img/email.png">
+                        </div>
+                        <div class="menu-item-text">
+                            <span class="menu-text-body">Email Benutzer</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-base menu-item menu-item-link" title="FAQ" href="/FAQ">
+                        <div class="menu-icon">
+                            <img src="img/faq.png">
+                        </div>
+                        <div class="menu-item-text">
+                            <span class="menu-text-body">FAQ</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-base menu-item menu-item-link" title="Log out" href="/logout">
+                        <div class="menu-icon">
+                            <img src="img/logout.png">
+                        </div>
+                        <div class="menu-item-text">
+                            <span class="menu-text-body">Ausloggen</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div id="company" class="text-center" style="margin-top: auto;margin-bottom:20px;">
+                <img src="img/company.png"/>
+            </div>
+        </section>
+    </aside>
+    <section class="body">
+        <div class="data-container">
+            <div class="float-left"><h4 class="page-title">Aufgabenliste</h4></div>
+            <div style="text-align: right;">
+                <button class="btn nallowGuest btn-bg" type="button" data-toggle="modal" data-target="#newModal">
+                    <span class="btn-label">
+                        <svg class="svg-icon" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" style="margin-right: 10px;">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+                            <path fill="none" d="M0 0h24v24H0z"></path>
+                        </svg> Neuer Job
+                    </span>
+                </button>
+                <button class="btn ml-1 nallowGuest btn-bg" type="button" data-toggle="modal" data-target="#processModal">
+                    <span class="btn-label">
+                        <svg class="svg-icon" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" style="margin-right: 10px;">
+                            <path d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314
+								c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743
+								s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314
+								c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path>
+                        </svg> Prozess einstellen
+                    </span>
+                </button>
+            </div>
+            <div class="card-box">
+                <div id="dataGrid"></div>
+            </div>
+        </div>
+    </section>
+    <div class="modal" id="newModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Neuer Job</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form id="newJobForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Lieferung <span class="text-primary">*</span></label>
+                                <input type="text" class="form-control" name="method" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Auftrg-Nr. <span class="text-primary">*</span></label>
+                                <input type="text" class="form-control" name="order" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Kunde</label>
+                                <input type="text" class="form-control" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Produkt <span class="text-primary">*</span></label>
+                                <input type="text" class="form-control" name="product" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Anzahl <span class="text-primary">*</span></label>
+                                <input type="text" class="form-control" name="qty" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Notizen <span class="text-primary">*</span></label>
+                                <input type="text" class="form-control" name="notes" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Versand-Art <span class="text-primary">*</span></label>
+                                <input type="text" class="form-control" name="shipping" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Fertigstellung <span class="text-primary">*</span></label>
+                                <input type="text" class="form-control dpicker" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Bearbeiter <span class="text-primary">*</span></label>
+                                <input type="text" class="form-control" name="initial" required>
+                            </div>
+                            <div class="form-group form-check">
+                                <input id="check-1" class="form-check-input" name="customs" type="checkbox">
+                                <label for="check-1" class="form-check-label">Zollanmeldung</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group col-md-12">
+                                <label class="control-label">Prozess <span class="text-primary">*</span></label>
+                                <ol id="processJob" style="min-height:100px;">
+
+                                </ol>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="addJob">Add</button>
+            </div>
+      
+          </div>
+        </div>
+    </div>
+    <div class="modal" id="processModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Prozess einstellen</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h6 class="text-muted">Prozessliste</h6>
+                <ol id="processList" style="min-height:100px;">
+
+                </ol>
+                <hr>
+                <div class="row">
+                    <div class="col-md-9"><input type="text" class="form-control" id="inputProcess"></div>
+                    <div class="col-md-3 pl-0"><button id="newProcess" class="btn btn-danger w-100">Add</button></div>
+                </div>
+            </div>
+      
+          </div>
+        </div>
+    </div>
+
+    <div class="modal" id="editProcessModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Prozess bearbeiten</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+                <h6 class="text-muted">Prozessliste</h6>
+                <ol id="editProcessList" style="min-height:100px;" data-process="">
+
+                </ol>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" id="resetJob">Zurücksetzen</button>
+                <button type="button" class="btn btn-success" id="editJob">Bearbeiten</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal" id="barcodeModal">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Barcode</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body" id="printContent">
+                <div style="background:white;text-align:center">
+                    <style>
+                        @media print {
+                            #barcodeList li {margin-bottom: 40px}
+                        }
+                    </style>
+                    <h6 style="font-weight: bolder;margin: 20px 20px 30px;text-align: left;" id="barTitle"></h6>
+                    <ol id="barcodeList" style="min-height:30px;padding-left: 0;margin-top: 0;margin-bottom: 1rem;"></ol>
+                </div>
+            </div>
+      
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="print" data-print=""><i class="bi bi-printer"></i>&nbsp;&nbsp; Code drucken</button>
+              </div>
+
+          </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+    <script src="js/socket.io.min.js"></script>
+    <script src="https://cdn3.devexpress.com/jslib/20.2.4/js/dx.all.js"></script>
+    <script src="js/JsBarcode.all.min.js"></script>
+    <script src="js/print.min.js"></script>
+    <script src="js/jquery.toast.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Laminieren",
+    "order": 4,
+    "id": 9
+  },
+  {
+    "name": "Schneiden",
+    "order": 5,
+    "id": 12
+  },
+  {
+    "name": "Schweißen",
+    "order": 7,
+    "id": 13
+  },
+  {
+    "name": "Montieren",
+    "order": 10,
+    "id": 14
+  },
+  {
+    "name": "Verpacken",
+    "order": 13,
+    "id": 15
+  },
+  {
+    "name": "Versenden",
+    "order": 14,
+    "id": 16
+  },
+  {
+    "name": "Operating",
+    "order": 2,
+    "id": 23
+  },
+  {
+    "name": "DV",
+    "order": 1,
+    "id": 24
+  },
+  {
+    "name": "Drucken",
+    "order": 3,
+    "id": 25
+  },
+  {
+    "name": "Fräsen",
+    "order": 6,
+    "id": 26
+  },
+  {
+    "name": "Ösen",
+    "order": 11,
+    "id": 27
+  },
+  {
+    "name": "Qualitätskontrolle",
+    "order": 12,
+    "id": 28
+  },
+  {
+    "name": "Nähen",
+    "order": 8,
+    "id": 29
+  },
+  {
+    "name": "Plotten",
+    "order": 9,
+    "id": 30
+  },
+  {
+    "name": "Abholbereit",
+    "order": 15,
+    "id": 31
+  }
+]

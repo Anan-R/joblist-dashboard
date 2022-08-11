@@ -1,0 +1,110 @@
+[
+  {
+    "email": "admin@jobliste.de",
+    "password": "xxxx",
+    "firstname": "Ralf",
+    "lastname": "Schubert",
+    "created": "2021-02-23",
+    "role": "Admin",
+    "id": 1
+  },
+  {
+    "email": "user@jobliste.de",
+    "password": "xxxx",
+    "firstname": "-",
+    "lastname": "-",
+    "created": "2021-02-23",
+    "role": "User",
+    "id": 2
+  },
+  {
+    "email": "guest@jobliste.de",
+    "password": "xxxx",
+    "firstname": "-",
+    "lastname": "-",
+    "created": "2021-02-23",
+    "role": "Guest",
+    "id": 3
+  },
+  {
+    "email": "ralf.schubert@bannerheld.net",
+    "password": "xxxx",
+    "firstname": "Ralf",
+    "lastname": "Schubert",
+    "role": "Admin",
+    "created": "2021-02-25",
+    "id": 4
+  },
+  {
+    "email": "christoph.zorn@bannerheld.net",
+    "password": "xxxx",
+    "firstname": "Christoph",
+    "lastname": "Zorn",
+    "role": "User",
+    "created": "2021-03-09",
+    "id": 8
+  },
+  {
+    "email": "goekhan.yilmaz@metropoldruck.com",
+    "password": "xxxx",
+    "firstname": "Goekhan",
+    "lastname": "Yilmaz",
+    "role": "Admin",
+    "created": "2021-03-10",
+    "id": 9
+  },
+  {
+    "email": "guest@jobliste.de",
+    "password": "xxxx",
+    "firstname": "Guest ",
+    "lastname": "01",
+    "role": "Guest",
+    "created": "2021-03-10",
+    "id": 10
+  },
+  {
+    "email": "metehan.yilmaz@bannerheld.net",
+    "password": "xxxx",
+    "firstname": "Metehan",
+    "lastname": "Yilmaz",
+    "role": "User",
+    "created": "2021-03-16",
+    "id": 12
+  },
+  {
+    "email": "jane.mueller@bannerheld.net",
+    "password": "xxxx",
+    "firstname": "Jane ",
+    "lastname": "Müller",
+    "role": "User",
+    "created": "2021-03-16",
+    "id": 13
+  },
+  {
+    "email": "produktion@jobliste.de",
+    "password": "xxxx",
+    "firstname": "Produktion",
+    "lastname": "Bannerheld",
+    "role": "Guest",
+    "created": "2021-03-23",
+    "id": 14
+  },
+  {
+    "email": "antoniya.mikova@bannerheld.net",
+    "password": "xxxx",
+    "firstname": "Antoniya",
+    "lastname": "Mikova",
+    "role": "User",
+    "created": "2021-05-04T10:27:41.251Z",
+    "id": 16
+  },
+  {
+    "email": "anja.schmidt@bannerheld.net",
+    "password": "xxxx",
+    "firstname": "Anja ",
+    "lastname": "Schmidt",
+    "role": "User",
+    "created": "2021-05-04T10:28:02.976Z",
+    "id": 17
+  }
+]
